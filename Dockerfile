@@ -1,8 +1,9 @@
-FROM python:3.11-slim
+FROM python:3.12
 WORKDIR /workspace
-RUN apt-get update
-RUN apt-get install python3-pygame -y
-RUN python3 -m pip install pygame imageio
+RUN "echo" "ls"
+RUN apt update
+RUN apt install python3-pip -y
+RUN python3 -m pip install -r ./requirements.txt
 
 ENV DISPLAY=host.docker.internal:0.0
 
